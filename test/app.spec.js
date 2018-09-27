@@ -24,22 +24,22 @@ describe('top spots', function () {
     nightmare = new Nightmare();
   });
 
-  it('should show a list of topspots as bootstrap wells', () =>
+  it('should show a list of topspots as bootstrap cards', () =>
     nightmare
     .goto(url)
-    .wait('div.well')
-    .evaluate(() => document.querySelectorAll('div.well').length)
+    .wait('div.col-10')
+    .evaluate(() => document.querySelectorAll('div.col-10').length)
     .end()
     .then((numberOfTodoComponents) => {
       expect(numberOfTodoComponents).to.equal(30);
     })
   ).timeout(nightmareTimeout);
 
-  it('should show topspot name in each bootstrap well using a <h4> element.', () =>
+  it('should show topspot name in each bootstrap col-10 using a <h4> element.', () =>
     nightmare
     .goto(url)
-    .wait('div.well')
-    .evaluate(() => Array.prototype.slice.call(document.querySelectorAll('div.well>h4')).map(el => el.innerHTML))
+    .wait('div.col-10')
+    .evaluate(() => Array.prototype.slice.call(document.querySelectorAll('div.col-10>h4')).map(el => el.innerHTML))
     .end()
     .then((titles) => {
       expect(titles.length).to.equal(30);
@@ -47,11 +47,11 @@ describe('top spots', function () {
     })
   ).timeout(nightmareTimeout);
 
-  it('should show topspot description in each bootstrap well using a <p> element.', () =>
+  it('should show topspot description in each bootstrap desc using a <p> element.', () =>
     nightmare
     .goto(url)
-    .wait('div.well')
-    .evaluate(() => Array.prototype.slice.call(document.querySelectorAll('div.well>p')).map(el => el.innerHTML))
+    .wait('div.desc')
+    .evaluate(() => Array.prototype.slice.call(document.querySelectorAll('div.desc>p')).map(el => el.innerHTML))
     .end()
     .then((descriptions) => {
       expect(descriptions.length).to.equal(30);
@@ -59,11 +59,11 @@ describe('top spots', function () {
     })
   ).timeout(nightmareTimeout);
 
-  it('should show a link in each bootstrap well using an <a> element styled as a bootstrap button.', () =>
+  it('should show a link in each bootstrap col-2 using an <a> element styled as a bootstrap button.', () =>
     nightmare
     .goto(url)
-    .wait('div.well')
-    .evaluate(() => Array.prototype.slice.call(document.querySelectorAll('div.well>a')).map(el => el.attributes.href.nodeValue))
+    .wait('div.col-2')
+    .evaluate(() => Array.prototype.slice.call(document.querySelectorAll('div.col-2>a')).map(el => el.attributes.href.nodeValue))
     .end()
     .then((links) => {
       expect(links.length).to.equal(30);
