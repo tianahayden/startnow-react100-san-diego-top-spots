@@ -26,12 +26,23 @@ class App extends Component {
       margin: '5vw 1vw 2vw 1vw',
     }
 
+    var backgroundStyle = {
+      backgroundImage: 'url("https://media.sandiegoreader.com/img/blogs/entry_img/2012/Sep/25/readerpostcards2_t670_t658.jpg?ff95ca2b4c25d2d6ff3bfb257febf11d604414e5")',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      height: '500px',
+      position: 'sticky',
+      top: '0',
+    }
+
+
     return (
       <div className='App'>
         <div className='container justify-content-center'>
+        <div style={backgroundStyle}></div>
           <div className='row justify-content-center'>
             <div className='card' style={headerStyle}>
-              <div className='card-body text-center'>
+              <div className='card-body text-center bg-primary text-white border border-dark'>
                 <div className="col">
                   <h1>San Diego Top Spots</h1>
                   <p>A list of 30 places to see in San Diego, California.</p>

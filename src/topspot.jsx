@@ -6,10 +6,10 @@ export default props => (
             width: '80vw',
             margin: '1vw'
         }}>
-            <div className='card-body'>
+            <div className='card-body bg-dark text-white border border-primary'>
                 <div className='row'>
                     <div className='col-10'>
-                        <h4>{props.name}</h4>
+                        <h4 data-toggle="tooltip" data-placement="top" title={props.name}>{props.name}</h4>
                     </div>
                     <div className='col-2'>
                         <a className='btn btn-primary btn-block' href={'https://maps.google.com/?q=' + props.location[0] + ',' + props.location[1]} target='_blank'>Map Link</a>
@@ -19,7 +19,7 @@ export default props => (
                 <div className='row' style={{
                     paddingLeft: '2vw'
                 }}>
-                    <p>{props.description}</p>
+                        <p>{props.description}</p>
                 </div>
             </div>
         </div>
